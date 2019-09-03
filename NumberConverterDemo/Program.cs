@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text;
 using NumberConverter;
 
 namespace NumberConverterDemo
@@ -8,18 +9,22 @@ namespace NumberConverterDemo
     {
         static void Main(string[] args)
         {
-            int testNum = 30;///999_999_999;
-            List<string> NumberInWords = new List<string>(testNum);
+            StringBuilder stringBuffer = new StringBuilder(2*1024*1024);
+            int[] sampleNumbers = new int[] {1,5,10,20,90,99,21,1000,9000,9876,10000,19811,1000000, 25000001,999_999_999 };
 
-            for (int i = 999; i <= 1000; i++)
+            foreach (var number in sampleNumbers)
             {
-                var str = $"{i} in words is {i.ToWords()}";
-                Console.WriteLine(str);
-                NumberInWords.Add(str);
+                try
+                {
+                    stringBuffer.AppendLine($"{number} -> \"{number.ToWords().Trim()}\"");
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex);
+                }
             }
-           
 
-            
+            Console.WriteLine(stringBuffer.ToString());
             Console.ReadLine();
         }
     }

@@ -1,22 +1,7 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
-
-  <ItemGroup>
-    <Compile Update="NumberConverterResource.Designer.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>NumberConverterResource.resx</DependentUpon>
-    </Compile>
-  </ItemGroup>
-
-  <ItemGroup>
-    <EmbeddedResource Update="NumberConverterResource.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>NumberConverterResource.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-  </ItemGroup>
 
 </Project>

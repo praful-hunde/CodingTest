@@ -8,7 +8,7 @@ namespace NumberConverter
 
         static readonly string[] name_0_to_9 = new string[] { " Zero", " One", " Two", " Three", " Four", " Five", " Six", " Seven", " Eight", " Nine" };
         static readonly string[] name_10_To_90 = new string[] { " Zero", " Ten", " Twenty", " Thirty", " Fourty", " Fifty", " Sixty", " Seventy", " Eighty", " Ninty" };
-        static readonly string[] name_10_To_19 = new string[] { " Ten", " Eleven", " Tweleve", " Thirteen", " Fourteen", " Fifteen", " Sixteen", " Sevnteen", " Eighteen", " Ninteen" };
+        static readonly string[] name_11_To_19 = new string[] { " Zero", " Eleven", " Tweleve", " Thirteen", " Fourteen", " Fifteen", " Sixteen", " Sevnteen", " Eighteen", " Ninteen" };
 
         public static string ToWords(this int number)
         {
@@ -31,20 +31,20 @@ namespace NumberConverter
                 return numInWords;
             }
 
-            if (number >= 10 && number < 20)
+            if (number > 10 && number < 20)
             {
-                numInWords += name_10_To_19[number - 10];
+                numInWords += name_11_To_19[number - 10];
                 return numInWords;
             }
 
-            int remainder, quotent;
-            numInWords += number.ToWords(1000000, out remainder,out quotent);
+            int remainder;
+            numInWords += number.ToWords(1000000, out remainder);
 
             if (remainder != 0)
-                numInWords += number.ToWords(1000, out remainder, out quotent);
+                numInWords += number.ToWords(1000, out remainder);
 
             if (remainder != 0)
-                numInWords += number.ToWords(100, out remainder, out quotent);
+                numInWords += number.ToWords(100, out remainder);
 
             if (remainder != 0)
             {
@@ -52,7 +52,7 @@ namespace NumberConverter
                 {
                 }
                 else
-                    numInWords += number.ToWords(10, out remainder, out quotent);
+                    numInWords += number.ToWords(10, out remainder);
             }
 
             if (remainder != 0)
@@ -63,10 +63,10 @@ namespace NumberConverter
             return numInWords;
         }
 
-        private static string ToWords(ref this int number, int divisor, out int remainder,out int quotient)
+        private static string ToWords(ref this int number, int divisor, out int remainder)
         {
             string numInWords = String.Empty;
-            quotient = Math.DivRem(number, divisor, out remainder);
+            int quotient = Math.DivRem(number, divisor, out remainder);
 
             if (quotient > 0)
             {
