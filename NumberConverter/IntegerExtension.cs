@@ -75,7 +75,7 @@ namespace NumberConverter
             if (quotient > 0)
             {
                 if (divisor == 10)
-                    numInWords = GetName(divisor, quotient * 10, remainder);
+                    numInWords = GetName(divisor, quotient, remainder);
                 else
                     numInWords = quotient.ToWords() + GetName(divisor, number, remainder);
 
@@ -101,7 +101,7 @@ namespace NumberConverter
                     name = " Hundred";
                     break;
                 case 10:
-                    name = name_10_To_90[number / 10];
+                    name = name_10_To_90[number];
                     break;
                 default:
                     break;
