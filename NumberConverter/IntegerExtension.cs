@@ -79,6 +79,11 @@ namespace NumberConverter
                 else
                     numInWords = quotient.ToWords() + GetName(divisor, number, remainder);
 
+                if(divisor == 100 && remainder !=0)
+                {
+                    numInWords += " And";
+                }
+
                 number = remainder;
             }
 
