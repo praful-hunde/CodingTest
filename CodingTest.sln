@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NumberConverterDemo", "Numb
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{6810E969-BCC4-4F0B-9C5A-5291756EBFC8}"
 	ProjectSection(SolutionItems) = preProject
-		NOTE.txt = NOTE.txt
+		ReadMe.txt = ReadMe.txt
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NumberConverter", "NumberConverter\NumberConverter.csproj", "{146F2609-00C6-4124-9989-A1B4A9BFE10C}"

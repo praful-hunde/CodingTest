@@ -63,6 +63,14 @@ namespace NumberConverter
             return numInWords;
         }
 
+        /// <summary>
+        /// Private extension method
+        /// </summary>
+        /// <param name="number"></param>
+        /// <param name="divisor"></param>
+        /// <param name="remainder"></param>
+        /// <param name="quotient"></param>
+        /// <returns></returns>
         private static string ToWords(ref this int number, int divisor, out int remainder,out int quotient)
         {
             string numInWords = String.Empty;
