@@ -38,7 +38,7 @@ namespace NumberConverter
             }
 
             int remainder, quotent;
-            numInWords += number.ToWords(1000000, out remainder,out quotent);
+            numInWords += number.ToWords(1000000, out remainder, out quotent);
 
             if (remainder != 0)
                 numInWords += number.ToWords(1000, out remainder, out quotent);
@@ -48,17 +48,13 @@ namespace NumberConverter
 
             if (remainder != 0)
             {
-                if (number > 9 && number < 20) // 10 to 19
-                {
-                }
+                if (number > 9 && number < 20) { } // 10 to 19 neglect
                 else
                     numInWords += number.ToWords(10, out remainder, out quotent);
             }
 
             if (remainder != 0)
-            {
                 numInWords += number.ToWords();
-            }
 
             return numInWords;
         }
